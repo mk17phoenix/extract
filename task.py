@@ -20,6 +20,6 @@ for i in b:
     print(i)
 for i in c:
     print(i)
-for item in d:
-    print(item)
+for i in d:
+    print(i)
 

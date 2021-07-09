@@ -1,25 +1,25 @@
 import docx2txt
 import re
 
-my_text=docx2txt.process("iob.docx")
+my_text=docx2txt.process("C:/Users/muthu kumaran/Downloads/iob.docx")
 
-Name=re.compile("[\w]{1,4}\s:\s[\w]{1}\s[\w]{1,5}\s[\w]{1,7}")
-a=Name.findall(my_text)
+Name=re.findall("[\w]{1,4}\s:\s[\w]{1}\s[\w]{1,5}\s[\w]{1,7}",my_text)
 
-Address=re.compile("[\w]{1,8}\s:\s\s[\w]{1,5}\s[\w]{1,2}/[\d]\s[\w]{1,15}\s[\w]{1,2}\s[\w]{1,15}\s[\w]{1,15}\s[\w]{1,20}")
-b=Address.findall(my_text)
+Address=re.findall("[\w]{1,8}\s:\s\s[\w]{1,5}\s[\w]{1,2}/[\d]\s[\w]{1,15}\s[\w]{1,2}\s[\w]{1,15}\s[\w]{1,15}\s[\w]{1,20}",my_text)
 
-Email=re.compile("[\w]{1,5}\s[\w]{1,2}\s:\s[\w]{1,9}@[\w]{1,5}.[\w]{1,3}")
-c=Email.findall(my_text)
+Email=re.findall("[\w]{1,7}\s[\w]{1,3}\s:\s\S+@\S+",my_text)
 
-Phone_no=re.compile("\w{1,7}\s\w{1,3}\s:\s\d{10}")
-d=Phone_no.findall(my_text)
-for i in a:
+Phone=re.findall("\w{1,7}\s\w{1,3}\s:\s\d{10}",my_text)
+
+for i in Name:
     print(i)
-for i in b:
+    
+for i in Address:
     print(i)
-for i in c:
+
+for i in Email:
     print(i)
-for i in d:
-    print(i)
+
+for item in Phone:
+    print(item)
 

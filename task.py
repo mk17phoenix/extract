@@ -1,7 +1,7 @@
 import docx2txt
 import re
 
-my_text=docx2txt.process("C:/Users/muthu kumaran/Downloads/iob.docx")
+my_text=docx2txt.process("iob.docx")
 
 Name=re.findall("[\w]{1,4}\s:\s[\w]{1}\s[\w]{1,5}\s[\w]{1,7}",my_text)
 
